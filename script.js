@@ -96,13 +96,8 @@ class Navigation {
   updateNavbarStyle() {
     if (!this.navbar) return;
 
-    const scrollY = window.scrollY;
-    const isScrolled = scrollY > 50;
-
-    this.navbar.style.background = isScrolled
-      ? "rgba(255, 255, 255, 0.98)"
-      : "rgba(255, 255, 255, 0.95)";
-    this.navbar.style.backdropFilter = isScrolled ? "blur(15px)" : "blur(10px)";
+    const isScrolled = window.scrollY > 50;
+    this.navbar.classList.toggle("scrolled", isScrolled);
   }
 
   updateActiveLink() {

@@ -27,15 +27,15 @@ README.md
 
 The project is available on **GitHub Pages**:
 
-[🔗 View live portfolio](https://nruiz209487.github.io/MiCurriculum/)
+[🔗 View live portfolio](https://neoruisan-dev.github.io/)
 
 ---
 
 ### 🏗️ How to deploy locally
 
 ```bash
-git clone https://github.com/nruiz209487/MiCurriculum.git
-cd MiCurriculum
+git clone https://github.com/neoruisan-dev/neoruisan-dev.github.io.git
+cd neoruisan-dev.github.io
 # Open index.html in your browser
 ```
 

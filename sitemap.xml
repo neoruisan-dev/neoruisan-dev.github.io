@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nruiz209487.github.io/MiCurriculum/index.html</loc>
+    <loc>https://neoruisan-dev.github.io/index.html</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://nruiz209487.github.io/MiCurriculum/es/index.html</loc>
+    <loc>https://neoruisan-dev.github.io/es/index.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://nruiz209487.github.io/MiCurriculum/certificates/certificates.html</loc>
+    <loc>https://neoruisan-dev.github.io/certificates/certificates.html</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
