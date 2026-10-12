@@ -19,7 +19,6 @@
   --pattern-grid: rgba(0, 0, 0, 0.035);
   --pattern-dot: rgba(0, 0, 0, 0.07);
   --title-underline: #09090b;
-  --linkedin-blue: #0077b5;
 }
 
 * {
@@ -1858,6 +1857,18 @@ a[href*="linkedin"].btn-hero:hover i {
     box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25) !important;
   }
 
+  .btn-hero.btn-linkedin i,
+  .btn-hero.btn-outline-primary i,
+  a[href*="linkedin"].btn-hero i {
+    color: #ffffff !important;
+  }
+
+  .btn-hero.btn-linkedin:hover i,
+  .btn-hero.btn-outline-primary:hover i,
+  a[href*="linkedin"].btn-hero:hover i {
+    color: #000000 !important;
+  }
+
   .btn-hero.btn-github {
     background: transparent !important;
     color: #ffffff !important;
@@ -1869,17 +1880,38 @@ a[href*="linkedin"].btn-hero:hover i {
     color: #000000 !important;
   }
 
-  .btn-outline-primary {
+  .btn-outline-primary,
+  a[href*="linkedin"].btn-outline-primary {
     border-color: #ffffff !important;
     color: #ffffff !important;
     background: transparent !important;
   }
 
   .btn-outline-primary:hover,
-  .btn-outline-primary:focus {
+  .btn-outline-primary:focus,
+  a[href*="linkedin"].btn-outline-primary:hover,
+  a[href*="linkedin"].btn-outline-primary:focus {
     background: #ffffff !important;
     border-color: #ffffff !important;
     color: #000000 !important;
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .btn-outline-primary i,
+  a[href*="linkedin"].btn-outline-primary i {
+    color: #ffffff !important;
+  }
+
+  .btn-outline-primary:hover i,
+  .btn-outline-primary:focus i,
+  a[href*="linkedin"].btn-outline-primary:hover i,
+  a[href*="linkedin"].btn-outline-primary:focus i {
+    color: #000000 !important;
+  }
+
+  .social-icon.linkedin,
+  .linkedin {
+    color: #ffffff !important;
   }
 
   .btn-outline-secondary {
