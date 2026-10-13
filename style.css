@@ -291,6 +291,7 @@ footer,
 /* ==================== HERO SECTION ==================== */
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   background: url("img/wallpaper.webp") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -384,7 +385,7 @@ footer,
 
 /* ==================== SECCIONES GENERALES ==================== */
 .section-padding {
-  padding: 100px 0;
+  padding: 108px 0;
   position: relative;
   z-index: 2;
   background-color: var(--light-bg);
@@ -800,7 +801,7 @@ footer,
 
 /* ==================== PORTFOLIO SECTION ==================== */
 #portfolio {
-  padding: 100px 0;
+  padding: 108px 0;
   background-color: var(--light-bg) !important;
   background-image: 
     radial-gradient(circle at center, var(--pattern-dot) 1.25px, transparent 1.25px),
@@ -1305,25 +1306,31 @@ footer,
     height: 200px;
   }
   .hero {
-    min-height: auto;
-    padding-top: 110px;
-    padding-bottom: 70px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 85px;
+    padding-bottom: 35px;
   }
   .hero-image-container,
   .hero-image {
     padding-right: 0;
     justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 45px;
+    margin-bottom: 15px;
   }
 }
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    line-height: 1.2;
   }
   .hero .lead {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
   }
   .section-title {
     font-size: 2rem;
@@ -1340,11 +1347,11 @@ footer,
   }
   .hero-image {
     margin-top: 45px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   .hero-image i,
   .hero-image .icon-blur {
-    font-size: 6rem !important;
+    font-size: 5.5rem !important;
   }
   #contact .row.justify-content-center {
     row-gap: 14px;
@@ -1353,20 +1360,30 @@ footer,
 
 @media (max-width: 576px) {
   .hero {
-    padding-top: 100px;
-    padding-bottom: 60px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: 80px;
+    padding-bottom: 25px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .hero .lead {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
   .hero .d-flex.gap-3 {
     flex-wrap: wrap;
     gap: 12px !important;
   }
   .hero-image {
-    margin-top: 40px;
+    margin-top: 42px;
     margin-bottom: 10px;
   }
   .hero-image i,
   .hero-image .icon-blur {
-    font-size: 5rem !important;
+    font-size: 4.5rem !important;
   }
   .section-title {
     font-size: 1.8rem;
@@ -1588,8 +1605,9 @@ a[href*="linkedin"].btn-hero:hover i {
 }
 
 @media (max-width: 768px) {
-  .section-padding {
-    padding: 60px 0;
+  .section-padding,
+  #portfolio {
+    padding: 72px 0;
   }
 
   .section-title {
@@ -1616,12 +1634,9 @@ a[href*="linkedin"].btn-hero:hover i {
 }
 
 @media (max-width: 576px) {
-  body {
-    padding-top: 60px;
-  }
-
-  .section-padding {
-    padding: 50px 0;
+  .section-padding,
+  #portfolio {
+    padding: 72px 0;
   }
 
   .section-title {

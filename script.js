@@ -11,11 +11,12 @@ const config = {
 window.addEventListener('load', function() {
     setTimeout(function() {
         const loader = document.getElementById('loader-wrapper'); // selection of the loader element
-        loader.style.opacity = '0';
-        setTimeout(function() {
-            loader.style.display = 'none';
-        }, 500);
-        
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, 500);
+        }
     }, 500);
 });
 
@@ -49,9 +50,10 @@ const year = today.getFullYear();
 const month = today.toLocaleString("default", { month: "long" });
 const day = today.getDate();
 
-document.getElementById(
-  "footer-text"
-).innerHTML = `&copy; Building ideas in code! — ${day} ${month} ${year}`;
+const footerText = document.getElementById("footer-text");
+if (footerText) {
+  footerText.innerHTML = `&copy; Building ideas in code! — ${day} ${month} ${year}`;
+}
 
 // ==================== NAVEGACIÓN Y SCROLL ====================
 class Navigation {
@@ -227,6 +229,9 @@ class App {
     this.navigation = new Navigation();
     this.animations = new Animations();
 
+    // Alinear secciones a la cuadrícula de fondo (múltiplos exactos de 36px)
+    this.setupGridAlignment();
+
     // Eventos de carga
     this.setupLoadEvents();
   }
@@ -234,6 +239,46 @@ class App {
   setupInitialStyles() {
     document.body.style.opacity = "0";
     document.body.style.transition = "opacity 0.3s ease";
+  }
+
+  setupGridAlignment() {
+    const align = () => {
+      const GRID_SIZE = 36;
+      const sections = utils.getAllElements("section.section-padding");
+      if (!sections || !sections.length) return;
+
+      // 1. Resetear padding-bottom inline para medir layout base
+      sections.forEach((section) => {
+        section.style.paddingBottom = "";
+      });
+
+      // 2. Medir y ajustar padding-bottom para que offsetHeight sea múltiplo exacto de GRID_SIZE
+      sections.forEach((section) => {
+        const height = section.offsetHeight;
+        const remainder = height % GRID_SIZE;
+        if (remainder !== 0) {
+          const needed = GRID_SIZE - remainder;
+          const basePadding = parseFloat(window.getComputedStyle(section).paddingBottom) || 0;
+          section.style.paddingBottom = `${basePadding + needed}px`;
+        }
+      });
+    };
+
+    // Ejecución inmediata inicial
+    align();
+
+    // Ejecutar tras carga de fuentes web (Google Fonts Poppins)
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(align);
+    }
+
+    // Ejecutar tras carga completa de recursos (imágenes, iconos)
+    window.addEventListener("load", align);
+
+    // Ejecutar en redimensionamiento de ventana con debounce
+    const debouncedAlign = utils.debounce(align, 100);
+    window.addEventListener("resize", debouncedAlign);
+    window.addEventListener("orientationchange", () => setTimeout(align, 150));
   }
 
   setupLoadEvents() {
